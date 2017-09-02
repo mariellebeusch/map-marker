@@ -1,0 +1,82 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../google-map/google-map.html">
+<link rel="import" href="../google-map/google-map-marker.html">
+
+
+<dom-module id="map-marker">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      google-map {
+        height: 700px;
+      }
+    </style>
+
+    <!-- hier binde ich meinen Test ein -->
+    <google-map api-key="AIzaSyACNW_8WwulqnDi_0qZWXzQu5WwzcKBpEo" latitude="47.415561" longitude="9.248852" zoom="16" additional-map-options='{"mapTypeId":"satellite"}'>
+      <google-map-marker latitude="47.415561" longitude="9.248852" icon="[[icon1]]">
+        <h3>#Underworld Rocks!</h3>
+        <iframe title="Foo Fighters" class="youtube-player" type="text/html" width="400" height="310" src="https://www.youtube.com/embed/YSAYAt2Zy1I" frameborder="0"></iframe>
+      </google-map-marker>
+
+      <google-map-marker latitude="47.415946" longitude="9.252098" icon="[[icon2]]">
+        <h3>#Underworld Rocks!</h3>
+        <iframe title="Mumford & Sons" class="youtube-player" type="text/html" width="400" height="310" src="https://www.youtube.com/embed/Ew40VYJfRNw" frameborder="0"></iframe>
+      </google-map-marker>
+
+      <google-map-marker latitude="47.414930" longitude="9.246261" icon="[[icon3]]">
+        <h3>#Underworld Rocks!</h3>
+        <iframe title="Paramore" class="youtube-player" type="text/html" width="400" height="310" src="https://www.youtube.com/embed/FkcYbZD0fj8" frameborder="0"></iframe>
+      </google-map-marker>
+
+      <google-map-marker latitude="47.413913" longitude="9.248836" icon="[[icon4]]">
+        <h3>#Underworld Rocks!</h3>
+        <iframe title="Kings of Leon" class="youtube-player" type="text/html" width="400" height="310" src="https://www.youtube.com/embed/RSLuOGtrhyM" frameborder="0"></iframe>
+      </google-map-marker>
+
+      <google-map-marker latitude="47.417166" longitude="9.248321" icon="[[icon5]]">
+        <h3>#Underworld Rocks!</h3>
+        <iframe title="Artctic Monkeys" class="youtube-player" type="text/html" width="400" height="310" src="https://www.youtube.com/embed/NFiM1co0acE" frameborder="0"></iframe>
+      </google-map-marker>
+    </google-map>
+
+  </template>
+
+  <script>
+      /**
+       * @customElement
+       * @polymer
+       */
+      class MapMarker extends Polymer.Element {
+          static get is() { return 'map-marker'; }
+          static get properties() {
+              return {
+                  icon1: {
+                      type: String,
+                      value: '/assets/img/maps/map-icon1.png'
+                  },
+                  icon2: {
+                      type: String,
+                      value: '/assets/img/maps/map-icon2.png'
+                  },
+                  icon3: {
+                      type: String,
+                      value: '/assets/img/maps/map-icon3.png'
+                  },
+                  icon4: {
+                      type: String,
+                      value: '/assets/img/maps/map-icon4.png'
+                  },
+                  icon5: {
+                      type: String,
+                      value: '/assets/img/maps/map-icon5.png'
+                  }
+              };
+          }
+      }
+
+      window.customElements.define(MapMarker.is, MapMarker);
+  </script>
+</dom-module>
